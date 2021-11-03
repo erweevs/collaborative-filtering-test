@@ -73,7 +73,7 @@ for itemId, rating in testData.ur[testUserInnerUID]:
 
 # get the top rated items for the similar users
 recommendations = []
-topNAdded = 0
+itemsAdded = 0
 for itemId, ratingSum in sorted(recommendationCanidates.items(), key=itemgetter(1), reverse=True):
     # only recommend items the user has not yet seen
     if not itemId in viewed:
@@ -83,7 +83,7 @@ for itemId, ratingSum in sorted(recommendationCanidates.items(), key=itemgetter(
         movieName = ml.getMovieName(int(movieId))
         recommendations.append(movieName)
 
-        topNAdded += 1
-        if topNAdded > N: break
+        itemsAdded += 1
+        if itemsAdded > N: break
 
 print(recommendations)
