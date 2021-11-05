@@ -32,7 +32,7 @@ userRatings = testData.ur[testUserInnerUID]
 
 # build an array of objects that contains the movie id, and the rating the user gave it
 # [(650, 5.0), (20, 5.0), (27, 5.0), (4206, 5.0), (387, 5.0), (49, 5.0), (423, 5.0), (99, 5.0), (145, 5.0), (55, 5.0)]
-# knn = heapq.nlargest(N, userRatings, key= lambda x: x[1])
+knn = heapq.nlargest(N, userRatings, key= lambda x: x[1])
 
 # TODO: experiment to only include rating higher than 4 stars
 # knn = []
